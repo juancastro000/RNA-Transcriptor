@@ -12,9 +12,14 @@ public class TranscriptorTest {
     }
 
     @Test
-    public void testTranscribesinglenucleotide() {
+    public void testTranscribeSingleNucleotide() {
         TranscriptionStrategy transcription = new Transcriptor();
         assertThat(transcription.transcribe("A"), equalTo("U"));
     }
 
+    @Test
+    public void testTranscribeCompleteSequence() {
+        TranscriptionStrategy transcription = new Transcriptor();
+        assertThat(transcription.transcribe("ACGT"), equalTo("UGCA"));
+    }
 }

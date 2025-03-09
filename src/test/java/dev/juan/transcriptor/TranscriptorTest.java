@@ -7,7 +7,7 @@ public class TranscriptorTest {
 
     @Test
     public void testTranscribeEmptyString() {
-        TranscriptionStrategy transcription = new DnaToRnaTranscription();
+        TranscriptionStrategy transcription = new Transcriptor();
         assertThat(transcription.transcribe(""), equalTo(""));
     }
 

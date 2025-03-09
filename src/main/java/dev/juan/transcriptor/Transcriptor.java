@@ -7,6 +7,14 @@ public class Transcriptor implements TranscriptionStrategy{
         if(dna.isEmpty()){
             return "";
         }
-        return null;
+        StringBuilder rna = new StringBuilder();
+        for (char nucleotide : dna.toCharArray()) {
+            if (nucleotide == 'A') {
+                rna.append('U');
+            } else {
+                throw new IllegalArgumentException("Unknow nucleotide: " + nucleotide);
+            }
+        }
+        return rna.toString();
     }
 }

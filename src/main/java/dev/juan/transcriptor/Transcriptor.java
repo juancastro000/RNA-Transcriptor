@@ -9,10 +9,21 @@ public class Transcriptor implements TranscriptionStrategy{
         }
         StringBuilder rna = new StringBuilder();
         for (char nucleotide : dna.toCharArray()) {
-            if (nucleotide == 'A') {
-                rna.append('U');
-            } else {
-                throw new IllegalArgumentException("Unknow nucleotide: " + nucleotide);
+            switch (nucleotide) {
+                case 'A': 
+                    rna.append('U');
+                    break;
+                case 'C': 
+                    rna.append('G');
+                    break;
+                case 'G': 
+                    rna.append('C');
+                    break;
+                case 'T': 
+                    rna.append('A');
+                    break;
+                default:
+                    throw new IllegalArgumentException("Nucleótido desconocido: " + nucleotide);
             }
         }
         return rna.toString();

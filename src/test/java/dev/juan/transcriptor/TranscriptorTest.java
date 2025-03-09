@@ -11,6 +11,10 @@ public class TranscriptorTest {
         assertThat(transcription.transcribe(""), equalTo(""));
     }
 
-    
+    @Test
+    public void testTranscribesinglenucleotide() {
+        TranscriptionStrategy transcription = new Transcriptor();
+        assertThat(transcription.transcribe("A"), equalTo("U"));
+    }
 
 }
